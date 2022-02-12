@@ -20,7 +20,7 @@ my @FIELDS = qw/
 # Build getters
 for my $field (@FIELDS) {
     my $method = __PACKAGE__->_as_method($field);
-    no strict 'refs';
+    no strict 'refs'; ## no critic
     *{__PACKAGE__ . '::' . $method} = sub {
         my $self = shift;
         if (exists $self->{_value}{$method}) {
