@@ -191,12 +191,19 @@ To get the value of Sec-CH-UA-Full-Version
 =head2 Getters for Sec-CH-UA* raw values
 
 =head3 ua_raw
+
 =head3 mobile_raw
+
 =head3 platform_raw
+
 =head3 arch_raw
+
 =head3 bitness_raw
+
 =head3 model_raw
+
 =head3 full_version_list_raw
+
 =head3 full_version_raw
 
 =head2 accept_ch(\@excepts)
