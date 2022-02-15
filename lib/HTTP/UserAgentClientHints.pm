@@ -226,6 +226,7 @@ Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
 
 L<https://github.com/WICG/ua-client-hints/blob/main/README.md>
 
+L<https://wicg.github.io/ua-client-hints/>
 
 =head1 LICENSE
 
