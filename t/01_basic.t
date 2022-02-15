@@ -40,14 +40,16 @@ RAW: {
 }
 
 {
-    t->got($uach->ua)->expected(q|"Chrome"; v="73", "Chromium"; v="73", "?Not:Your Browser"; v="11"|)->is;
+    t->got($uach->ua)->expected('HTTP::UserAgentClientHints::BrandVersion')->isa_ok;
+    t->got($uach->ua->brand_version->{Chromium})->expected(73)->is;
     t->got($uach->mobile)->expected(q|1|)->is;
     t->got($uach->platform)->expected(q|Windows|)->is;
     t->got($uach->arch)->expected(q|arm|)->is;
     t->got($uach->bitness)->expected(q|64|)->is;
     t->got($uach->model)->expected(q|Pixel 2 XL|)->is;
     t->got($uach->full_version)->expected(q|73.1.2343B.TR|)->is;
-    t->got($uach->full_version_list)->expected(q|"Microsoft Edge"; v="92.0.902.73", "Chromium"; v="92.0.4515.131", "?Not:Your Browser"; v="3.1.2.0"|)->is;
+    t->got($uach->full_version_list)->expected('HTTP::UserAgentClientHints::BrandVersion')->isa_ok;
+    t->got($uach->full_version_list->brand_version->{Chromium})->expected("92.0.4515.131")->is;
 
     # get again (from cache)
     t->got($uach->platform)->expected(q|Windows|)->is;
