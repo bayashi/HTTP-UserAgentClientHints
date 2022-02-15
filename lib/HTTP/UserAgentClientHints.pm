@@ -1,6 +1,8 @@
 package HTTP::UserAgentClientHints;
 use strict;
 use warnings;
+use HTTP::UserAgentClientHints::BrandVersion;
+use HTTP::UserAgentClientHints::Util;
 
 our $VERSION = '0.02';
 
@@ -60,24 +62,15 @@ sub _normalize {
 
     return $value unless defined $value;
 
-    if ($field =~ m!^(?:Platform|Arch|Bitness|Model|Full-Version)$!) {
-        $value = $self->_strip_quote($value);
+    if ($field eq 'UA' || $field eq 'Full-Version-List') {
+        $value = HTTP::UserAgentClientHints::BrandVersion->new($value);
     }
-
-    if ($field eq 'Mobile') {
+    elsif ($field =~ m!^(?:Platform|Arch|Bitness|Model|Full-Version)$!) {
+        $value = HTTP::UserAgentClientHints::Util->strip_quote($value);
+    }
+    elsif ($field eq 'Mobile') {
         $value =~ s/^\?//;
     }
-
-    return $value;
-}
-
-sub _strip_quote {
-    my ($self, $value) = @_;
-
-    return '' unless defined $value;
-
-    $value =~ s/^"//;
-    $value =~ s/"$//;
 
     return $value;
 }
@@ -154,11 +147,9 @@ The constructor. The $http_headers_object is required. It should be an object li
 
 These methods below are normalized to remove double-quotes around value and strip `?` on Sec-UA-CH-Mobile.
 
-B<WARNIGS>: The value of C<ua> and C<full_version_list> are not concreted. These are sama value as *_raw method for now. In the future, these would be changed to a hash reference value after parsing. 
-
 =head3 ua
 
-To get the value of Sec-CH-UA
+To get the value of Sec-CH-UA as an object of L<HTTP::UserAgentClientHints::BrandVersion>
 
 =head3 mobile
 
@@ -182,7 +173,7 @@ To get the value of Sec-CH-UA-Model
 
 =head3 full_version_list
 
-To get the value of Sec-CH-UA-Full-Version-List
+To get the value of Sec-CH-UA-Full-Version-List as an object of L<HTTP::UserAgentClientHints::BrandVersion>
 
 =head3 full_version
 
