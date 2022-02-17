@@ -4,7 +4,7 @@ use warnings;
 use HTTP::UserAgentClientHints::BrandVersion;
 use HTTP::UserAgentClientHints::Util;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 my $HTTP_HEADER_PREFIX = 'Sec-CH-UA';
 
@@ -208,7 +208,7 @@ To get a string for C<Accept-CH> header in order to request UA-CH. By default, t
 
 =begin html
 
-<a href="https://github.com/bayashi/HTTP-UserAgentClientHints/blob/main/README.pod"><img src="https://img.shields.io/badge/Version-0.03-green?style=flat"></a> <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Artistic%202.0-GREEN.png"></a> <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/actions"><img src="https://github.com/bayashi/HTTP-UserAgentClientHints/workflows/main/badge.svg?_t=1644924232"/></a> <a href="https://coveralls.io/r/bayashi/HTTP-UserAgentClientHints"><img src="https://coveralls.io/repos/bayashi/HTTP-UserAgentClientHints/badge.png?_t=1644924232&branch=main"/></a>
+<a href="https://github.com/bayashi/HTTP-UserAgentClientHints/blob/main/README.pod"><img src="https://img.shields.io/badge/Version-0.04-green?style=flat"></a> <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Artistic%202.0-GREEN.png"></a> <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/actions"><img src="https://github.com/bayashi/HTTP-UserAgentClientHints/workflows/main/badge.svg?_t=1645096718"/></a> <a href="https://coveralls.io/r/bayashi/HTTP-UserAgentClientHints"><img src="https://coveralls.io/repos/bayashi/HTTP-UserAgentClientHints/badge.png?_t=1645096718&branch=main"/></a>
 
 =end html
 
