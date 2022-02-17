@@ -69,9 +69,9 @@ The constructor. The $sec_ch_ua string is required.
 
 =head2 brands
 
-To get brands list.
+To get brands list as array ref.
 
-    my @brands = $brand_version->brands;
+    my $brands = $brand_version->brands;
 
 NOTE that the order of the list is not specific. Please sort if you want.
 
