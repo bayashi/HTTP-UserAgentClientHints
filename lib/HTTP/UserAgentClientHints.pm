@@ -17,6 +17,7 @@ my @FIELDS = qw/
     Model
     Full-Version-List
     Full-Version
+    Platform-Version
 /;
 
 # Build getters
@@ -159,6 +160,10 @@ To get the value of Sec-CH-UA-Mobile
 
 To get the value of Sec-CH-UA-Platform
 
+=head3 platform_version
+
+To get the value of Sec-CH-UA-Platform-Version
+
 =head3 arch
 
 To get the value of Sec-CH-UA-Arch
@@ -179,6 +184,7 @@ To get the value of Sec-CH-UA-Full-Version-List as an object of L<HTTP::UserAgen
 
 To get the value of Sec-CH-UA-Full-Version
 
+
 =head2 Getters for Sec-CH-UA* raw values
 
 =head3 ua_raw
@@ -186,6 +192,8 @@ To get the value of Sec-CH-UA-Full-Version
 =head3 mobile_raw
 
 =head3 platform_raw
+
+=head3 platform_version_raw
 
 =head3 arch_raw
 
