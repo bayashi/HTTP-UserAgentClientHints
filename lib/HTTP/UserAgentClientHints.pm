@@ -126,12 +126,30 @@ HTTP::UserAgentClientHints - To Handle User Agent Client Hints
 
 =head1 SYNOPSIS
 
+This is an example of C<app.psgi> application with C<HTTP::UserAgentclientHints>.
+
+    use strict;
+    use warnings;
+    use Plack::Request;
     use HTTP::UserAgentClientHints;
 
-    my $uach = HTTP::UserAgentClientHints->new($headers);
-    print $uach->platform;
+    my $app = sub {
+        my $env = shift;
 
-    $headers->header('Accept-CH' => $uach->accept_ch);
+        my $req = Plack::Request->new($env);
+        my $uach = HTTP::UserAgentClientHints->new($req->headers);
+
+        return [
+            200,
+            [
+                "Content-Type", "text/plain",
+                "Accept-CH", $uach->accept_ch,
+            ],
+            [$uach->platform || ''],
+        ];
+    };
+
+Within a browser it supports UA-CH, then a response will include a platform information.
 
 
 =head1 DESCRIPTION
