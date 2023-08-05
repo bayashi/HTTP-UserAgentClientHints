@@ -1,6 +1,6 @@
 # HTTP::UserAgentClientHints
 
-This is Perl module B<HTTP::UserAgentClientHints>.
+This is Perl module `HTTP::UserAgentClientHints`.
 
 <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/blob/main/README.pod"><img src="https://img.shields.io/badge/Version-0.05-green?style=flat"></a> <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Artistic%202.0-GREEN.png"></a> <a href="https://github.com/bayashi/HTTP-UserAgentClientHints/actions"><img src="https://github.com/bayashi/HTTP-UserAgentClientHints/workflows/main/badge.svg?_t=1681289447"/></a> <a href="https://coveralls.io/r/bayashi/HTTP-UserAgentClientHints"><img src="https://coveralls.io/repos/bayashi/HTTP-UserAgentClientHints/badge.png?_t=1681289447&branch=main"/></a>
 
